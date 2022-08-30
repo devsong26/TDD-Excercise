@@ -16,7 +16,7 @@ public class AdderTest {
     }
 
     @Test
-    @DisplayName("더하기 실패")
+    @DisplayName("더하기 성공")
     public void test1(){
         // given
         int a = 10;
