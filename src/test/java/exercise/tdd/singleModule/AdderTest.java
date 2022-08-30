@@ -23,7 +23,7 @@ public class AdderTest {
         int b = 10;
 
         // when
-        int result = adder.process(a, b);
+        int result = adder.handle(a, b);
 
         assertEquals(result, 20);
     }
