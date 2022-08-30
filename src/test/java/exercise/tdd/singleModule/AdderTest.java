@@ -25,6 +25,7 @@ public class AdderTest {
         // when
         int result = adder.handle(a, b);
 
+        // then
         assertEquals(result, 20);
     }
 
