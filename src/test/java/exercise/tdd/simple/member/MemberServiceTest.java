@@ -32,7 +32,7 @@ public class MemberServiceTest {
             assertNotNull(member);
         });
     }
-//
+//  TODO 예외가 예상되는 메서드는 래핑해서 컨슈머로 짜보자.
 //    public void expectThrows(){
 //
 //    }
