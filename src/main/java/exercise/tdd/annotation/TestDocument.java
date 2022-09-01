@@ -4,7 +4,7 @@ import java.lang.annotation.*;
 
 @Documented
 @Target({ElementType.METHOD})
-@Retention(RetentionPolicy.SOURCE)
+@Retention(RetentionPolicy.RUNTIME)
 public @interface TestDocument {
 
     String expected() default "";
