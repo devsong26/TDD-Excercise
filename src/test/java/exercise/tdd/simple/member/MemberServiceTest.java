@@ -37,12 +37,12 @@ public class MemberServiceTest {
     @TestDocument(
             expected = "실패",
             comment = "회원가입 시도",
-            failReason = "username, password is null")
+            failReason = "username이 이메일 포맷이 아닐 경우")
     public void test_register2(){
         //given
-        String username = null, password = null;
+        String username = "username", password = "111";
 
-        assertThrows(NullPointerException.class, () -> {
+        assertThrows(RegexException.class, () -> {
             //when
             Member member = memberService.register(username, password);
 
