@@ -2,7 +2,8 @@ package exercise.tdd.simple.member;
 
 import java.util.Objects;
 
-public class Member implements DataValidator{
+public class Member extends DataValidator{
+
     private final String username;
     private final String password;
 
@@ -15,6 +16,10 @@ public class Member implements DataValidator{
     public void validate() {
         Objects.requireNonNull(username);
         Objects.requireNonNull(password);
+
+        final String usernameRegex = "^\\S+@\\S+\\.\\S+$";
+        super.getRgxChecker().check(usernameRegex, username);
+        super.getRgxChecker().check("", password);
     }
 
 }
