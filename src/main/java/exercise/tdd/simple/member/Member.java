@@ -15,11 +15,12 @@ public class Member extends DataValidator{
     @Override
     public void validate() {
         Objects.requireNonNull(username);
-        Objects.requireNonNull(password);
-
         final String usernameRegex = "^\\S+@\\S+\\.\\S+$";
         super.getRgxChecker().check(usernameRegex, username);
-        super.getRgxChecker().check("", password);
+
+        Objects.requireNonNull(password);
+        final String pwdRegex = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()])[a-zA-Z\\d!@#$%^&*()]{10,}";
+        super.getRgxChecker().check(pwdRegex, password);
     }
 
 }
