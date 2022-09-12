@@ -22,6 +22,10 @@ public enum ASCII{
         if(sel == 0) res = a.code;
         else if(sel == 1) res = A.code;
 
-        return (char) res;
+        return (char) (res + (
+                    sel < 2 ?
+                        RANDOM.nextInt(26) % 26
+                        : RANDOM.nextInt(10) % 10
+                ));
     }
 }
